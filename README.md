@@ -1,7 +1,7 @@
 # Pewlett_Hackard_Analysis
 
 ## Project Overview
-The Pewlett Hackard company is conducting an internal audit regarding the number of employees retiring in the upcoming year. The audit also includes identifying the employees eligble to participate in the company's mentorhsip program for ease of transition into between roles. A list of deliverables is highlighted below as per the company's requirements.
+The Pewlett Hackard company is conducting an internal audit regarding the number of employees retiring in the upcoming year. The audit also includes identifying the employees eligble to participate in the company's mentorship program for ease of transition into between roles. A list of deliverables is highlighted below as per the company's requirements.
 1. Identify the employees retiring based on age. 
 2. Provide a count for potential retirees for every department. 
 3. Identify the roles and titles that would need replacing due to retirements
