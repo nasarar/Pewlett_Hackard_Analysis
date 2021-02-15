@@ -22,9 +22,10 @@ The mentorship eligibility analysis shows that:
 
 
 ## Summary
-The upcoming 'Silver Tsunami' is looking to lose 90,398 employees not including the ones still elibile for the mentorship program. With the program, potentially bringing back another 1,549 employees, there will still be a net loss of 88,849 roles that need to be filled. Considering the lack of potential employees coming back for the program, the ratio to mentor and to new employees would be 1 mentor for roughly every 57 new employees. 
+The upcoming 'Silver Tsunami' is looking to lose 90,398 employees not including the ones still elibile for the mentorship program. With the program, potentially bringing another 1,549 employees as mentors, there is still a considerable amount of roles that need to be filled. The ratio to mentor and to new employees would be 1 mentor for roughly every 58 new employees. 
 
 To dig deep further into the analysis the query below can be used to create a more specific breakdown of the ratio of how many potential mentors vs. the number of new roles to be filled per title could be made. 
+
 ```
 SELECT  title,
 	COUNT(title)
@@ -34,7 +35,24 @@ GROUP BY title
 ORDER BY COUNT(title) DESC;
 ```
 
-Lastly, an analysis can be made in order to see the potential promotions that could be done versus how many new hires wil have to be made in order to keep up with the changes. The query below could be a starting point to the analysis.
+Lastly, an analysis can be made in order to see the potential promotions that could be done versus how many new hires wil have to be made in order to keep up with the changes. The query below could be a starting point to the analysis. A table can be made for each of the titles so that the human resources team of the company will have a clear list of potential new promotions for each of the position. 
 
 ```
- 
+SELECT DISTINCT ON (e.emp_no) e.emp_no,
+	e.first_name,
+	e.last_name,
+	e.birth_date,
+	de.from_date,
+	de.to_date,
+	ti.title
+-- INTO potential_promotion_engineer
+FROM employees AS e
+INNER JOIN dept_emp AS de
+ON (e.emp_no = de.emp_no)
+INNER JOIN titles AS ti
+ON (e.emp_no = ti.emp_no) 
+WHERE (birth_date BETWEEN '1956-01-01' AND '9999-01-01')
+	AND de.to_date = ('9999-01-01')
+	AND title = ('Engineer')
+ORDER BY emp_no;
+```
