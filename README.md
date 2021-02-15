@@ -34,4 +34,7 @@ GROUP BY title
 ORDER BY COUNT(title) DESC;
 ```
 
-Lastly, 
+Lastly, an analysis can be made in order to see the potential promotions that could be done versus how many new hires wil have to be made in order to keep up with the changes. The query below could be a starting point to the analysis.
+
+```
+ 
