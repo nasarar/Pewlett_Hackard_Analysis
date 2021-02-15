@@ -23,3 +23,15 @@ The mentorship eligibility analysis shows that:
 
 ## Summary
 The upcoming 'Silver Tsunami' is looking to lose 90,398 employees not including the ones still elibile for the mentorship program. With the program, potentially bringing back another 1,549 employees, there will still be a net loss of 88,849 roles that need to be filled. Considering the lack of potential employees coming back for the program, the ratio to mentor and to new employees would be 1 mentor for roughly every 57 new employees. 
+
+To dig deep further into the analysis the query below can be used to create a more specific breakdown of the ratio of how many potential mentors vs. the number of new roles to be filled per title could be made. 
+```
+SELECT  title,
+	COUNT(title)
+INTO mentor_count
+FROM mentorship_eligibility
+GROUP BY title
+ORDER BY COUNT(title) DESC;
+```
+
+Lastly, 
